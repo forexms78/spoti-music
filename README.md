@@ -47,7 +47,3 @@ npm i tailwind-merge
 npm i supabase@">=1.8.1" -- save-dev
 npx supabase login
 npx supabase gen types typescript --project-id mlijsgrrixtkhnrtppbw --schema public > types_db.ts
-
-npm i react-icons
-
-npm i tailwind-merge
