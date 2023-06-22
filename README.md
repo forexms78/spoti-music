@@ -61,3 +61,7 @@ npm i zustand
 npm i @supabase/auth-ui-react
 
 npm i react-hot-toast
+
+npm i react-hook-form
+npm i uniqid
+npm i -D @types/uniqid
