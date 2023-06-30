@@ -67,3 +67,11 @@ npm i uniqid
 npm i -D @types/uniqid
 
 npm i query-string
+
+npm i @radix-ui/react-slider
+
+npm i use-sound
+
+npm i react-spinners
+
+npm i @stripe/stripe-js
