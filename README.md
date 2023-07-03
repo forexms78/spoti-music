@@ -75,3 +75,11 @@ npm i use-sound
 npm i react-spinners
 
 npm i @stripe/stripe-js
+
+brew install stripe/stripe-cli/stripe
+
+stripe login
+
+stripe listen --forward-to localhost:3000/api/webhooks
+
+stripe trigger payment_intent.succeeded

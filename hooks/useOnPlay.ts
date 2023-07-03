@@ -9,9 +9,10 @@ const useOnPlay = (song: Song[]) => {
   const authModal = useAuthModal();
   const { user } = useUser();
 
+  // AuthModal 로그인시 곡재생할지 여부
   const onPlay = (id: string) => {
     if (!user) {
-      return authModal.onOpen();
+      return;
     }
 
     player.setId(id);

@@ -49,7 +49,7 @@ const Liked = async () => {
               font-bold
             "
               >
-                Liked Songs
+                좋아요한 노래
               </h1>
             </div>
           </div>

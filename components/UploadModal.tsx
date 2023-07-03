@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [adminCheck, setAdminCheck] = useState();
   const uploadModal = useUploadModal();
   const { user } = useUser();
   const supabaseClient = useSupabaseClient();
@@ -98,11 +99,12 @@ const UploadModal = () => {
       setIsLoading(false);
     }
   };
+  console.log(user?.id);
 
   return (
     <Modal
-      title="Add a song"
-      description="Upload an mp3 file"
+      title="곡 추가하기"
+      description="곡은 저만 추가하겠습니다😄"
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
@@ -120,7 +122,7 @@ const UploadModal = () => {
           placeholder="아티스트"
         />
         <div>
-          <div className="pb-1">Select a song file</div>
+          <div className="pb-1">노래 파일</div>
           <Input
             placeholder="test"
             disabled={isLoading}
@@ -131,7 +133,7 @@ const UploadModal = () => {
           />
         </div>
         <div>
-          <div className="pb-1">Select an image</div>
+          <div className="pb-1">앨범 커버</div>
           <Input
             placeholder="test"
             disabled={isLoading}
@@ -141,9 +143,13 @@ const UploadModal = () => {
             {...register("image", { required: true })}
           />
         </div>
-        <Button disabled={isLoading} type="submit">
-          Create
-        </Button>
+        {user?.id !== "0bd8ef7a-c919-4b6c-bc78-b2e06caf3978" ? (
+          <div>관리자 계정으로 로그인 부탁드려요 😚</div>
+        ) : (
+          <Button disabled={isLoading} type="submit">
+            Create
+          </Button>
+        )}
       </form>
     </Modal>
   );
