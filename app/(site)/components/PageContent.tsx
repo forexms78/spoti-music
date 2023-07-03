@@ -12,7 +12,11 @@ const PageContent: React.FC<PageContentProps> = ({ songs }) => {
   const onPlay = useOnPlay(songs);
 
   if (songs.length === 0) {
-    return <div className="mt-4 text-neutral-400">No songs available.</div>;
+    return (
+      <div className="mt-4 text-neutral-400">
+        곡이 준비되지 않았습니다 기다려주세요 😅.
+      </div>
+    );
   }
 
   return (

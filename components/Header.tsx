@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         `
   h-fit 
   bg-gradient-to-b 
-  from-emerald-800 
+  from-gray-700
   p-6
   `,
         className
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
       <div className="w-full mb-4 flex items-center justify-between">
         <div className="hidden md:flex gap-x-2 items-center">
           <button
-            onClick={() => router.back()}
+            onClick={() => router.push("/")}
             className="
               rounded-full 
               bg-black 
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             <RxCaretLeft className="text-white" size={35} />
           </button>
           <button
-            onClick={() => router.forward()}
+            onClick={() => router.push("/search")}
             className="
               rounded-full 
               bg-black 
@@ -81,6 +81,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         </div>
         <div className="flex md:hidden gap-x-2 items-center">
           <button
+            onClick={() => router.push("/")}
             className="
               rounded-full 
               p-2 
@@ -96,6 +97,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             <HiHome className="text-black" />
           </button>
           <button
+            onClick={() => router.push("/search")}
             className="
               rounded-full 
               p-2 

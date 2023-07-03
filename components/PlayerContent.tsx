@@ -93,28 +93,7 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
   };
 
   return (
-    <div className="grid grid-cols-4 md:grid-cols-5 h-full">
-      {isMobile ? (
-        <div
-          onClick={handlePlay}
-          className="
-        flex 
-        items-center 
-        justify-center
-        h-10
-        w-10 
-        rounded-full 
-        bg-white 
-        p-1 
-        cursor-pointer
-      "
-        >
-          <Icon size={30} className="text-black" />
-        </div>
-      ) : (
-        <div></div>
-      )}
-
+    <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
         <div className="flex items-center gap-x-4">
           <MediaItem data={song} />
@@ -133,7 +112,7 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
     "
       >
         <div
-          onClick={() => {}}
+          onClick={handlePlay}
           className="
         h-10
         w-10
@@ -199,7 +178,6 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
       "
         />
       </div>
-      <div></div>
 
       <div className="hidden md:flex w-full justify-end pr-2">
         <div className="flex items-center gap-x-2 w-[120px]">
@@ -210,7 +188,6 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
           />
           <Slider value={volume} onChange={(value) => setVolume(value)} />
         </div>
-        d
       </div>
     </div>
   );
