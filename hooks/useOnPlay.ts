@@ -11,9 +11,9 @@ const useOnPlay = (song: Song[]) => {
 
   // AuthModal 로그인시 곡재생할지 여부
   const onPlay = (id: string) => {
-    if (!user) {
-      return;
-    }
+    // if (!user) {
+    //   return authModal.onOpen();
+    // }
 
     player.setId(id);
     player.setIds(song.map((song) => song.id));

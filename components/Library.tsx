@@ -22,9 +22,10 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
 
   // 로그인 하지 않았으면 로그인창
   const onClick = () => {
-    if (!user) {
-      return authModal.onOpen();
-    }
+    // AuthModal 로그인시 곡재생할지 여부
+    // if (!user) {
+    //   return authModal.onOpen();
+    // }
 
     // TODO: upload
     return uploadModal.onOpen();

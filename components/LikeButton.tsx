@@ -44,9 +44,10 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
   const Icon = isLiked ? AiFillHeart : AiOutlineHeart;
 
   const handleLike = async () => {
-    if (!user) {
-      return authModal.onOpen();
-    }
+    // AuthModal 로그인시 곡재생할지 여부
+    // if (!user) {
+    //   return authModal.onOpen();
+    // }
 
     if (isLiked) {
       const { error } = await supabaseClient
