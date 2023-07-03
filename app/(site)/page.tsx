@@ -29,7 +29,7 @@ export default async function Home() {
               font-semibold
             "
           >
-            벨보이 음악차트
+            스포티 음악차트
           </h1>
           <div
             className="
