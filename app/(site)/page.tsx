@@ -34,8 +34,6 @@ export default async function Home() {
                 <h1 className="text-white text-l font-semibold">
                   node v20.1.0 | react v18.2.8 | next v13.4.4 | supabase v1.68.6
                   | zustand v4.3.8 | use-sound <br />
-                  📔Patch Notes <br />
-                  install vercel analytics
                 </h1>
               </div>
             </div>
@@ -76,6 +74,22 @@ export default async function Home() {
           </h1>
         </div>
         <PageContent songs={songs} />
+      </div>
+      <div className="mt-2 mb-7 px-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-white text-2xl font-semibold">
+            📔Patch Notes <br />
+          </h1>
+        </div>
+        <div className="flex justify-between items-center">
+          <div className="mt-3 mb-3 px-3">
+            <h1 className="text-white text-l font-semibold">
+              install vercel analytics <br />
+              site description Change <br />
+              playerContent mute button update
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
   );
