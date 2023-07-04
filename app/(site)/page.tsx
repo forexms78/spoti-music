@@ -32,7 +32,10 @@ export default async function Home() {
             <div className="flex justify-between items-center">
               <div className="mt-3 mb-3 px-3">
                 <h1 className="text-white text-l font-semibold">
-                  node v20.1.0
+                  node v20.1.0 | react v18.2.8 | next v13.4.4 | supabase v1.68.6
+                  | zustand v4.3.8 | use-sound <br />
+                  📔Patch Notes <br />
+                  install vercel analytics
                 </h1>
               </div>
             </div>
