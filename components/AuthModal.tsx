@@ -33,11 +33,13 @@ const AuthModal = () => {
   return (
     <Modal
       isOpen={isOpen}
-      onChange={() => {}}
-      title={"welcome"}
-      description={"login to your account"}
+      onChange={onChange}
+      title={"회원가입"}
+      description={
+        "로그인하여 좋아요 기능을 이용하거나 노래를 추가할 수 있어요!"
+      }
     >
-      Auth modal
+      소셜 계정으로 회원가입하기
       <Auth
         supabaseClient={supabaseClient}
         providers={["github"]}
