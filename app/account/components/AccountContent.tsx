@@ -13,6 +13,8 @@ const AccountContent = () => {
 
   const [loading, setLoading] = useState(false);
 
+  console.log(user);
+
   useEffect(() => {
     if (!isLoading && !user) {
       router.replace("/");
@@ -34,7 +36,8 @@ const AccountContent = () => {
 
   return (
     <div className="mb-7 px-6">
-      {!subscription && (
+      <p>{user?.email}님 반갑습니다</p>
+      {/* {!subscription && (
         <div className="flex flex-col gap-y-4">
           <p>No active plan.</p>
         </div>
@@ -54,7 +57,7 @@ const AccountContent = () => {
             Open customer portal
           </Button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

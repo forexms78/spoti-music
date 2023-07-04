@@ -93,8 +93,6 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
       setVolume(0);
     }
   };
-  console.log(volume);
-
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
