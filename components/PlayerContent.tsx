@@ -20,6 +20,7 @@ interface PlayContentProps {
 const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
   const player = usePlayer();
   const [volume, setVolume] = useState(1);
+  const [recommendVolume, setRecommendVolume] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
@@ -85,12 +86,14 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
   };
 
   const toggleMute = () => {
+    setRecommendVolume(volume);
     if (volume === 0) {
-      setVolume(1);
+      setVolume(recommendVolume);
     } else {
       setVolume(0);
     }
   };
+  console.log(volume);
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
