@@ -3,15 +3,16 @@ import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 
 import PageContent from "./components/PageContent";
+import Image from "next/image";
 
 export const revalidate = 0;
 
 export default async function Home() {
-  const songs = await getSongs();
+    const songs = await getSongs();
 
-  return (
-    <div
-      className="
+    return (
+        <div
+            className="
         bg-neutral-900 
         rounded-lg 
         h-full 
@@ -19,78 +20,52 @@ export default async function Home() {
         overflow-hidden 
         overflow-y-auto
       "
-    >
-      <Header>
-        <div className="mb-2">
-          <div className="mt-2 mb-7 px-6">
-            <div className="flex justify-between items-center">
-              <h1 className="text-white text-2xl font-semibold">
-                💻 박병호 포트폴리오 음악 스트리밍 사이트 (spotify클론 디테일
-                수정) <br />
-              </h1>
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="mt-3 mb-3 px-3">
-                <h1 className="text-white text-l font-semibold">
-                  node v20.1.0 | react v18.2.8 | next v13.4.4 | supabase v1.68.6
-                  | zustand v4.3.8 | use-sound <br />
-                </h1>
-              </div>
-            </div>
-          </div>
+        >
+            <Header>
+                <div className="mb-2">
+                    <div className="mt-2 mb-7 px-6">
+                        <div className="flex justify-center items-center space-x-3">
+                            <Image src="/images/react-logo2.png"
+                                   alt="react-logo"
+                                   width="50"
+                                   height="50"
+                                   className="rounded-2xl"
+                            />
+                            <Image src="/images/ts-logo.png"
+                                   alt="ts-logo"
+                                   width="50"
+                                   height="50"
+                                   className="rounded-2xl"
+                            />
+                            <Image src="/images/supabase-logo.jpeg"
+                                   alt="supabase-logo"
+                                   width="50"
+                                   height="50"
+                                   className="rounded-2xl"
+                            />
+                        </div>
+                    </div>
 
-          <h1
-            className="
-            text-white 
-              text-3xl 
-              font-semibold
-            "
-          >
-            스포티 음악차트 🎵
-          </h1>
-          <div
-            className="
-              grid 
-              grid-cols-1 
-              sm:grid-cols-2 
-              xl:grid-cols-3 
-              2xl:grid-cols-4 
-              gap-3 
-              mt-4
-            "
-          >
-            <ListItem
-              name="Liked Songs"
-              image="/images/liked.png"
-              href="liked"
-            />
-          </div>
+                    <h1 className="text-white text-3xl font-semibold">
+                        좋아하는 노래 🎵
+                    </h1>
+                    <div className=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4">
+                        <ListItem
+                            name="Liked Songs"
+                            image="/images/liked.png"
+                            href="liked"
+                        />
+                    </div>
+                </div>
+            </Header>
+            <div className="mt-2 mb-7 px-6">
+                <div className="flex justify-between items-center">
+                    <h1 className="text-white text-2xl font-semibold">
+                        새로운 노래 추천 🤠
+                    </h1>
+                </div>
+                <PageContent songs={songs}/>
+            </div>
         </div>
-      </Header>
-      <div className="mt-2 mb-7 px-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-white text-2xl font-semibold">
-            새로운 노래 추천 🤠
-          </h1>
-        </div>
-        <PageContent songs={songs} />
-      </div>
-      <div className="mt-2 mb-7 px-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-white text-2xl font-semibold">
-            📔Patch Notes <br />
-          </h1>
-        </div>
-        <div className="flex justify-between items-center">
-          <div className="mt-3 mb-3 px-3">
-            <h1 className="text-white text-l font-semibold">
-              install vercel analytics <br />
-              site description Change <br />
-              playerContent mute button update
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
