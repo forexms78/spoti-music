@@ -24,13 +24,13 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
       {
         icon: HiHome,
         label: "뮤직홈",
-        active: pathname !== "search",
+        active: pathname === "/",
         href: "/",
       },
       {
         icon: BiSearch,
         label: "곡검색",
-        active: pathname === "search",
+        active: pathname === "/search",
         href: "/search",
       },
     ],
