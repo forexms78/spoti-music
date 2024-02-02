@@ -104,7 +104,7 @@ const UploadModal = () => {
   return (
     <Modal
       title="곡 추가하기"
-      description="곡은 저만 추가하겠습니다😄"
+      description="mp3 파일을 권장드립니다"
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
