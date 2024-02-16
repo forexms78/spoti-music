@@ -45,26 +45,24 @@ export default async function Home() {
                             />
                         </div>
                     </div>
-
-                    <h1 className="text-white text-3xl font-semibold">
-                        좋아하는 노래 🎵
-                    </h1>
-                    <div className=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4">
-                        <ListItem
-                            name="Liked Songs"
-                            image="/images/liked.png"
-                            href="liked"
-                        />
-                    </div>
                 </div>
             </Header>
             <div className="mt-2 mb-7 px-6">
                 <div className="flex justify-between items-center">
                     <h1 className="text-white text-2xl font-semibold">
-                        새로운 노래 추천 🤠
+                        Bellboi 플레이리스트
                     </h1>
                 </div>
                 <PageContent songs={songs}/>
+            </div>
+            <div className="p-7">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4">
+                <ListItem
+                    name="Liked Songs"
+                    image="/images/liked.png"
+                    href="liked"
+                />
+            </div>
             </div>
         </div>
     );
