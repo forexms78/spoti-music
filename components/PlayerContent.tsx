@@ -10,7 +10,6 @@ import { HiSpeakerXMark, HiSpeakerWave } from "react-icons/hi2";
 import Slider from "./Slider";
 import usePlayer from "@/hooks/usePlayer";
 import useSound from "use-sound";
-import { isMobile } from "react-device-detect";
 
 interface PlayContentProps {
   song: Song;
@@ -26,21 +25,36 @@ const PlayerContent: React.FC<PlayContentProps> = ({ song, songUrl }) => {
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
+  // 다음곡으로 이동하는 함수
   const onPlayNext = () => {
-    if (player.ids.length === 0) {
+
+    if (player.ids.length === 0) {  // 대기열에 곡이없으면 리턴하지 않음
       return;
     }
 
-    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    const currentIndex = player.ids.findIndex((id) => id === player.activeId); // 현재 재생중인 노래를 지정
 
-    const nextSong = player.ids[currentIndex + 1];
+    const nextSong = player.ids[currentIndex + 1]; // 다음 재생될 노래를 지정
 
-    if (!nextSong) {
+    if (!nextSong) {                        // 다음 재생될 곡이 없으면 대기열의 처음으로 이동
       return player.setId(player.ids[0]);
     }
 
-    player.setId(nextSong);
+    player.setId(nextSong); // 다음곡으로 이동
   };
+
+  //TODO 플레이리스트 대기열을 셔플한다
+  // const onPlayShuffle = () => {
+  //   if (player.ids.length === 0) {        // 대기열에 곡이 없으면 반응 없음
+  //     return;
+  //   }
+  //
+  //   const currentIndex = player.ids.findIndex((id) => id === player.activeId); // 현재 재생중인 곡을 저장
+  //
+  //   for (let i = player.ids.length - 1; i > 0; i--) {
+  //     const randomIndex = Math.floor(Math.random() * (i + 1));
+  //     const tempId = player.ids[randomIndex]
+  // }
 
   const onPlayPrevious = () => {
     if (player.ids.length === 0) {
