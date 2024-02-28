@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [adminCheck, setAdminCheck] = useState();
+  // const [adminCheck, setAdminCheck] = useState();
   const uploadModal = useUploadModal();
   const { user } = useUser();
   const supabaseClient = useSupabaseClient();
@@ -24,7 +24,7 @@ const UploadModal = () => {
     defaultValues: {
       author: "",
       title: "",
-      sone: null,
+      song: null,
       image: null,
     },
   });
@@ -94,7 +94,7 @@ const UploadModal = () => {
       toast.success("곡을 성공적으로 등록했어요");
       uploadModal.onClose();
     } catch (error) {
-      toast.error("something went wrong");
+      toast.error("곡 등록에 실패하였습니다.");
     } finally {
       setIsLoading(false);
     }
@@ -143,8 +143,8 @@ const UploadModal = () => {
             {...register("image", { required: true })}
           />
         </div>
-        {user?.id !== "0bd8ef7a-c919-4b6c-bc78-b2e06caf3978" ? (
-          <div>관리자 계정으로 로그인 부탁드려요 😚</div>
+        {user?.id ? (
+          <div>로그인 후 곡추가가 가능해요.</div>
         ) : (
           <Button disabled={isLoading} type="submit">
             Create
